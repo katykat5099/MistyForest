@@ -5680,14 +5680,18 @@ MoveInfoBox:
 	ld [wStringBuffer1], a
 	call .PrintPP
 
+	callfar UpdateMoveData
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	farcall GetMoveCategoryName
 	hlcoord 1, 9
-	ld de, .Type
 	call PlaceString
 
 	hlcoord 7, 11
+	ld h, b
+	ld l, c
 	ld [hl], "/"
 
-	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -5698,8 +5702,6 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
-.Type:
-	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11
@@ -6225,7 +6227,7 @@ LoadEnemyMon:
 ; Fill stats
 	ld de, wEnemyMonMaxHP
 	ld b, FALSE
-	ld hl, wEnemyMonDVs - (MON_DVS - MON_STAT_EXP + 1)
+	ld hl, wEnemyMonDVs - (MON_DVS - MON_EVS + 1)
 	predef CalcMonStats
 
 ; If we're in a trainer battle,
@@ -7010,72 +7012,101 @@ GiveExperiencePoints:
 	pop bc
 	jp z, .next_mon
 
-; give stat exp
-	ld hl, MON_STAT_EXP + 1
+; Give EVs
+; e = 0 for no Pokerus, 1 for Pokerus
+	ld e, 0
+	ld hl, MON_PKRUS
 	add hl, bc
-	ld d, h
-	ld e, l
-	ld hl, wEnemyMonBaseStats - 1
-	push bc
-	ld c, NUM_EXP_STATS
-.stat_exp_loop
-	inc hl
-	ld a, [de]
-	add [hl]
-	ld [de], a
-	jr nc, .no_carry_stat_exp
-	dec de
-	ld a, [de]
-	inc a
-	jr z, .stat_exp_maxed_out
-	ld [de], a
-	inc de
-
-.no_carry_stat_exp
-	push hl
-	push bc
-	ld a, MON_PKRUS
-	call GetPartyParamLocation
 	ld a, [hl]
 	and a
-	pop bc
-	pop hl
-	jr z, .stat_exp_awarded
-	ld a, [de]
-	add [hl]
-	ld [de], a
-	jr nc, .stat_exp_awarded
-	dec de
-	ld a, [de]
+	jr z, .no_pokerus
+	inc e
+.no_pokerus
+	ld hl, MON_EVS
+	add hl, bc
+	push bc
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+; EV yield format: %hhaaddss %ttff0000
+; h = hp, a = atk, d = def, s = spd
+; t = sat, f = sdf, 0 = unused bits
+	ld a, [wBaseHPAtkDefSpdEVs]
+	ld b, a
+	ld c, 6 ; six EVs
+.ev_loop
+	rlc b
+	rlc b
+	ld a, b
+	and %11
+	bit 0, e
+	jr z, .no_pokerus_boost
+	add a
+.no_pokerus_boost
+; Make sure total EVs never surpass 510
+	push de
+	ld d, a
+	push af
+	push bc
+	push hl
+	ld a, c
+.find_correct_ev_add  ; if address of first ev is changed, find the correct ev address
+	cp 6
+	jr nc, .found_add
+	dec hl
 	inc a
-	jr z, .stat_exp_maxed_out
-	ld [de], a
-	inc de
-	jr .stat_exp_awarded
-
-.stat_exp_maxed_out
-	ld a, $ff
-	ld [de], a
-	inc de
-	ld [de], a
-
-.stat_exp_awarded
-	inc de
-	inc de
+	jr .find_correct_ev_add
+.found_add
+	ld e, 6
+	ld bc, 0
+.count_evs
+	ld a, [hli]
+	add c
+	ld c, a
+	jr nc, .cont
+	inc b
+.cont
+	dec e
+	jr nz, .count_evs
+	ld a, d
+	add c
+	ld c, a
+	adc b
+	sub c
+	ld b, a
+	ld e, d
+.decrease_evs_gained
+	call IsEvsGreaterThan510
+	jr z, .check_ev_overflow
+	jr c, .check_ev_overflow
+	dec e
+	dec bc
+	jr .decrease_evs_gained
+.check_ev_overflow
+	pop hl
+	pop bc
+	pop af
+	ld a, e
+	pop de
+	add [hl]
+	jr c, .ev_overflow
+	cp MAX_EV + 1
+	jr c, .got_ev
+.ev_overflow
+	ld a, MAX_EV
+.got_ev
+	ld [hli], a
 	dec c
-	jr nz, .stat_exp_loop
-	xor a
-	ldh [hMultiplicand + 0], a
-	ldh [hMultiplicand + 1], a
-	ld a, [wEnemyMonBaseExp]
-	ldh [hMultiplicand + 2], a
-	ld a, [wEnemyMonLevel]
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, 7
-	ldh [hDivisor], a
-	ld b, 4
-	call Divide
+	jr z, .evs_done
+; Use the second byte for Sp.Atk and Sp.Def
+	ld a, c
+	cp 2 ; two stats left, Sp.Atk and Sp.Def
+	jr nz, .ev_loop
+	ld a, [wBaseSpAtkSpDefEVs]
+	ld b, a
+	jr .ev_loop
+.evs_done
+
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_ID
@@ -7216,7 +7247,7 @@ GiveExperiencePoints:
 	add hl, bc
 	ld d, h
 	ld e, l
-	ld hl, MON_STAT_EXP - 1
+	ld hl, MON_EVS - 1
 	add hl, bc
 	push bc
 	ld b, TRUE
@@ -7388,6 +7419,16 @@ GiveExperiencePoints:
 	dec c
 	jr nz, .base_stat_division_loop
 	ret
+
+IsEvsGreaterThan510:
+      ; EV total in bc
+      ; Returns c if lower
+      ld a, b
+      cp HIGH(MAX_TOTAL_EV)
+      ret nz
+      ld a, c
+      cp LOW(MAX_TOTAL_EV)
+      ret
 
 BoostExp:
 ; Multiply experience by 1.5x

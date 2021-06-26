@@ -337,3 +337,12 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetTownNewGFX::
+INCBIN "gfx/tilesets/townnew.2bpp.lz"
+
+TilesetTownNewMeta::
+INCBIN "data/tilesets/townnew_metatiles.bin"
+
+TilesetTownNewColl::
+INCLUDE "data/tilesets/townnew_collision.asm"

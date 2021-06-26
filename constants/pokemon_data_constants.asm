@@ -79,13 +79,15 @@ MON_ITEM               rb
 MON_MOVES              rb NUM_MOVES
 MON_ID                 rw
 MON_EXP                rb 3
-MON_STAT_EXP           rw NUM_EXP_STATS
-rsset MON_STAT_EXP
-MON_HP_EXP             rw
-MON_ATK_EXP            rw
-MON_DEF_EXP            rw
-MON_SPD_EXP            rw
-MON_SPC_EXP            rw
+MON_EVS                rb NUM_EXP_STATS
+rsset MON_EVS
+MON_HP_EV              rb
+MON_ATK_EV             rb
+MON_DEF_EV             rb
+MON_SPD_EV             rb
+MON_SAT_EV             rb
+MON_SDF_EV             rb
+                       rb_skip 4
 MON_DVS                rw
 MON_PP                 rb NUM_MOVES
 MON_HAPPINESS          rb
@@ -114,6 +116,10 @@ PARTYMON_STRUCT_LENGTH EQU _RS
 
 NICKNAMED_MON_STRUCT_LENGTH EQU PARTYMON_STRUCT_LENGTH + MON_NAME_LENGTH
 REDMON_STRUCT_LENGTH EQU 44
+
+; significant EV values
+MAX_EV EQU 252
+MAX_TOTAL_EV EQU 510
 
 ; caught data
 
