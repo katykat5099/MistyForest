@@ -7015,7 +7015,7 @@ GiveExperiencePoints:
 ; Give EVs
 ; e = 0 for no Pokerus, 1 for Pokerus
 	ld e, 0
-	ld hl, MON_PKRUS
+	ld hl, MON_POKERUS
 	add hl, bc
 	ld a, [hl]
 	and a
