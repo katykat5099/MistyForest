@@ -467,6 +467,7 @@ ENDM
 	map_const DAY_OF_WEEK_SIBLINGS_HOUSE,                   4,  4 ; 11
 	map_const ROUTE_27_SANDSTORM_HOUSE,                     4,  4 ; 12
 	map_const ROUTE_29_ROUTE_46_GATE,                       5,  4 ; 13
+	map_const ROUTE_0,                                     10, 20
 	endgroup
 
 	newgroup SAFFRON                                              ; 25
@@ -501,4 +502,8 @@ ENDM
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
 	endgroup
 
-NUM_MAP_GROUPS EQU const_value ; 26
+	;newgroup KATYSGROUP                                           ; 27
+	;map_const ROUTE_0,                                     10, 20 ; 1
+	;endgroup
+
+NUM_MAP_GROUPS EQU const_value ; 27
