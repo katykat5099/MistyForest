@@ -158,3 +158,8 @@ SCENE_ALWAYS   EQU -1
 	const_def 1
 	const SCENE_FASTSHIP1F_ENTER_SHIP   ; 1
 	const SCENE_FASTSHIP1F_MEET_GRANDPA ; 2
+
+;wElmsHouseRoomSceneID
+    const_def 1
+    const SCENE_ELMS_HOUSE_NOTHING
+    const SCENE_ELMS_HOUSE_SCENE
