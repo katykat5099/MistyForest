@@ -28,7 +28,20 @@ NewBarkTownSilverScript:
     end
 
 NewBarkTownFisherScript:
-	jumptextfaceplayer Text_ElmDiscoveredNewMon
+	faceplayer
+	opentext
+	writetext Text_CantGoToTown
+	checkevent EVENT_RIVAL_NEW_BARK_TOWN
+	iffalse TalkToElder
+	promptbutton
+	closetext
+	end
+
+TalkToElder:
+    writetext YouShouldSeeElder
+    promptbutton
+    closetext
+    end
 
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
@@ -39,7 +52,7 @@ NewBarkTownPlayersHouseSign:
 ;MOVEMENT PAST HERE
 
 ;TEXT PAST HERE
-Text_ElmDiscoveredNewMon:
+Text_CantGoToTown:
 	text "Hey <PLAYER>."
 
 	para "Sorry, I cant"
@@ -47,7 +60,9 @@ Text_ElmDiscoveredNewMon:
 	cont "other part of"
 
 	para "town today."
+	done
 
+YouShouldSeeElder:
 	para "You should go"
 	line "see the Elder."
 	done
@@ -65,7 +80,7 @@ NewBarkTown_MapEvents:
 
 	def_warp_events
 	warp_event 13,  7, PLAYERS_HOUSE_1F, 1
-	warp_event 11, 13, PLAYERS_NEIGHBORS_HOUSE, 1
+	warp_event 11, 13, PLAYERS_NEIGHBORS_HOUSE, 2
 
 	def_coord_events
 

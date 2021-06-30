@@ -62,7 +62,7 @@ PokemonNames::
 	db "POLIWAG@@@"
 	db "POLIWHIRL@"
 	db "POLIWRATH@"
-	db "GECKOO@@@@"
+	db "GEKKOU@@@@"
 	db "KADABRA@@@"
 	db "ALAKAZAM@@"
 	db "MACHOP@@@@"
