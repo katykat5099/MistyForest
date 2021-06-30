@@ -68,7 +68,8 @@ YouShouldSeeElder:
 	done
 
 NewBarkTownSignText:
-	text "Research Lab Ahead"
+	text "Research Tower"
+	line "Ahead"
     done
 
 NewBarkTownPlayersHouseSignText:

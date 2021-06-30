@@ -2977,8 +2977,9 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wElmsHouseRoomSceneID::                           db
+wRoute0RoomSceneID::                              db
 
-	ds 48
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

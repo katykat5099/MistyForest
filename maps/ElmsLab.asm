@@ -68,10 +68,12 @@ WelcomeText:
 
 TrashcanText:
 	text "It's a trash can.."
-	line "Oh! There's a note"
+	line "…"
 
-	para "inside! It reads.."
-	line "insert hint text" ; PUT IN HINT TEXT WHEN IT COMES AVAILABLE
+	para "Oh! There's a note"
+	line "inside! It reads.."
+
+	para "insert hint text" ; PUT IN HINT TEXT WHEN IT COMES AVAILABLE
 	done
 
 ;END
@@ -87,7 +89,7 @@ ElmsLab_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  9,  9, BGEVENT_READ, Trashcan
+	bg_event  9,  3, BGEVENT_READ, Trashcan
 
 	def_object_events
 	object_event  4,  6, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElderScript, EVENT_ELDER_GONE

@@ -67,6 +67,7 @@ MeetMom4Script:
 	sjump MeetMomScript
 
 MeetMomScript:
+    setevent EVENT_ELDERAPPEAR
 	opentext
 	writetext GoSeeElder
 	promptbutton
@@ -89,6 +90,7 @@ MeetMomScript:
 	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
+	closetext
 	sjump .Finish
 
 .Finish:

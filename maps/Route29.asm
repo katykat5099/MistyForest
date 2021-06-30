@@ -6,6 +6,17 @@ Route29_MapScripts:
 
 	def_callbacks
 
+;Scripts Past Here
+TowersAheadScript:
+    jumptext TowersAhead
+
+;Text Past Here
+TowersAhead:
+    text "WEST: 1st Tower"
+    line "NORTH: 2nd Tower"
+    cont "SOUTH: 3rd Tower"
+    done
+
 Route29_MapEvents:
 	db 0, 0 ; filler
 
@@ -14,5 +25,6 @@ Route29_MapEvents:
 	def_coord_events
 
 	def_bg_events
+	bg_event  51,  11, BGEVENT_READ, TowersAheadScript
 
 	def_object_events

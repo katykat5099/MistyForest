@@ -163,3 +163,9 @@ SCENE_ALWAYS   EQU -1
     const_def 1
     const SCENE_ELMS_HOUSE_NOTHING
     const SCENE_ELMS_HOUSE_SCENE
+
+;wRoute0RoomSceneID
+    const_def
+    const SCENE_ROUTE_0_NOTHING
+    const SCENE_ROUTE_0_SCENE
+    const SCENE_ELDER_FORGET
