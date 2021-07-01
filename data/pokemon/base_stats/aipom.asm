@@ -1,7 +1,7 @@
 	db AIPOM ; 190
 
-	db  55,  70,  55,  85,  40,  55
-	evs  0,   0,   0,   0,   0,   0
+	db  20,   5,  15,  10,  20,  10
+	evs  0,   0,   0,   0,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type

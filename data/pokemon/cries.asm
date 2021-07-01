@@ -68,7 +68,7 @@ PokemonCries::
 	mon_cry CRY_PIDGEY,      255,  383 ; POLIWAG
 	mon_cry CRY_PIDGEY,      119,  224 ; POLIWHIRL
 	mon_cry CRY_PIDGEY,        0,  383 ; POLIWRATH
-	mon_cry CRY_METAPOD,     192,  129 ; ABRA
+	mon_cry CRY_CHIKORITA,   -10,  100 ; ABRA
 	mon_cry CRY_METAPOD,     168,  320 ; KADABRA
 	mon_cry CRY_METAPOD,     152,  383 ; ALAKAZAM
 	mon_cry CRY_GROWLITHE,   238,  129 ; MACHOP

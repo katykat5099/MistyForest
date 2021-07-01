@@ -833,37 +833,23 @@ PoliwrathEvosAttacks:
 AbraEvosAttacks:
 	db EVOLVE_LEVEL, 16, KADABRA
 	db 0 ; no more evolutions
-	db 1, TWISTER
+	db 1, GUST
 	db 1, SCRATCH
+	db 10, TWISTER
+	db 12, TAKE_DOWN
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
 	db EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
-	db 1, TELEPORT
-	db 1, KINESIS
-	db 1, CONFUSION
-	db 16, CONFUSION
-	db 18, DISABLE
-	db 21, PSYBEAM
-	db 26, RECOVER
-	db 31, FUTURE_SIGHT
-	db 38, PSYCHIC_M
-	db 45, REFLECT
+	db 1, TOXIC
+	db 1, TACKLE
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TELEPORT
-	db 1, KINESIS
-	db 1, CONFUSION
-	db 16, CONFUSION
-	db 18, DISABLE
-	db 21, PSYBEAM
-	db 26, RECOVER
-	db 31, FUTURE_SIGHT
-	db 38, PSYCHIC_M
-	db 45, REFLECT
+	db 1, TOXIC
+	db 1, TACKLE
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -1925,14 +1911,7 @@ KabutopsEvosAttacks:
 
 AerodactylEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WING_ATTACK
-	db 8, AGILITY
-	db 15, BITE
-	db 22, SUPERSONIC
-	db 29, ANCIENTPOWER
-	db 36, SCARY_FACE
-	db 43, TAKE_DOWN
-	db 50, HYPER_BEAM
+	db 1, TAKE_DOWN
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -2452,16 +2431,7 @@ FlaaffyEvosAttacks:
 
 AmpharosEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 1, THUNDERSHOCK
-	db 1, THUNDER_WAVE
-	db 9, THUNDERSHOCK
-	db 18, THUNDER_WAVE
-	db 27, COTTON_SPORE
-	db 30, THUNDERPUNCH
-	db 42, LIGHT_SCREEN
-	db 57, THUNDER
+	db 1, CRUNCH
 	db 0 ; no more level-up moves
 
 BellossomEvosAttacks:
@@ -2574,14 +2544,7 @@ JumpluffEvosAttacks:
 
 AipomEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, TAIL_WHIP
-	db 6, SAND_ATTACK
-	db 12, BATON_PASS
-	db 19, FURY_SWIPES
-	db 27, SWIFT
-	db 36, SCREECH
-	db 46, AGILITY
+	db 1, SWIFT
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:

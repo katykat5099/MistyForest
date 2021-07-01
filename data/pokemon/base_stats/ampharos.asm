@@ -1,10 +1,10 @@
 	db AMPHAROS ; 181
 
-	db  90,  75,  75,  55, 115,  90
+	db   5,   5,   5,   5,   5,   5
 	evs  0,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db ELECTRIC, ELECTRIC ; type
+	db NORMAL, DARK ; type
 	db 45 ; catch rate
 	db 194 ; base exp
 	db NO_ITEM, NO_ITEM ; items

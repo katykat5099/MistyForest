@@ -1,10 +1,10 @@
 	db AERODACTYL ; 142
 
-	db  80, 105,  65, 130,  60,  75
-	evs  0,   0,   0,   0,   0,   0
+	db  20,  20,  10,  10,   5,  15
+	evs  0,   1,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db ROCK, FLYING ; type
+	db NORMAL, NORMAL ; type
 	db 45 ; catch rate
 	db 202 ; base exp
 	db NO_ITEM, NO_ITEM ; items

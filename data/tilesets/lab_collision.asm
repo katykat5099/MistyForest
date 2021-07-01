@@ -16,16 +16,16 @@
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 0f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 10
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 11
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 12
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 12
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 13
 	tilecoll WALL, WALL, BOOKSHELF, BOOKSHELF ; 14
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 15
+	tilecoll WALL, WALL, FLOOR, LADDER ; 15
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 16
-	tilecoll WALL, WALL, WALL, WALL ; 17
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 17
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 18
 	tilecoll FLOOR, LADDER, FLOOR, FLOOR ; 19
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 1a
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 1b
+	tilecoll WALL, WALL, WALL, FLOOR ; 1a
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 1b
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 1c
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 1e

@@ -194,9 +194,7 @@ DayOfWeekSiblingsHouse_Blocks:
 Route27SandstormHouse_Blocks:
 MrPsychicsHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
-CherrygroveGymSpeechHouse_Blocks:
 GuideGentsHouse_Blocks:
-CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
@@ -1050,3 +1048,9 @@ SECTION "Map Blocks 4", ROMX
 
 Route0_Blocks:
     INCBIN "maps/Route0.blk"
+
+CherrygroveGymSpeechHouse_Blocks:
+    INCBIN "maps/CherrygroveGymSpeechHouse.blk"
+
+CherrygroveEvolutionSpeechHouse_Blocks:
+    INCBIN "maps/CherrygroveEvolutionSpeechHouse.blk"

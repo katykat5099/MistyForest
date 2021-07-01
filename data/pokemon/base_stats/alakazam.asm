@@ -1,10 +1,10 @@
 	db ALAKAZAM ; 065
 
-	db  55,  50,  45, 120, 135,  85
-	evs  0,   0,   0,   0,   0,   0
+	db  40,   5,  20,   5,   5,  20
+	evs  1,   0,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db NORMAL, NORMAL ; type
 	db 50 ; catch rate
 	db 186 ; base exp
 	db NO_ITEM, NO_ITEM ; items
