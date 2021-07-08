@@ -495,8 +495,8 @@ ENDM
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  5
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                10, 10 ;  6
-	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  7
-	map_const CHERRYGROVE_EVOLUTION_SPEECH_HOUSE,           4,  4 ;  8
+	map_const GUIDE_GENTS_HOUSE,                            3,  3 ;  7
+	map_const CHERRYGROVE_EVOLUTION_SPEECH_HOUSE,           8,  8 ;  8
 	map_const ROUTE_30_BERRY_HOUSE,                         4,  4 ;  9
 	map_const MR_POKEMONS_HOUSE,                            4,  4 ; 10
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11

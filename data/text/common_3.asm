@@ -1,28 +1,41 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "Let's move on."
+	line "Please,"
+
+	para "What is your"
+	line "name?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+    text "<PLAYER>!"
+    line "Recently it was"
+	cont "your birthday,"
 
-	para "Your very own"
-	line "#MON story is"
-	cont "about to unfold."
+	para "and to celebrate"
+	line "you took a test"
+	cont "that you spent"
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "your entire life"
+    line "studying for."
 
-	para "A world of dreams"
-	line "and adventures"
+    para "You did very"
+    line "well, but now"
+    cont "you must prove"
 
-	para "with #MON"
-	line "awaits! Let's go!"
+    para "if you really"
+    line "do have what it"
+    cont "takes to beat"
 
-	para "I'll be seeing you"
-	line "later!"
+    para "the unknown that"
+    line "lies ahead."
+
+    para "Now, wake up and"
+    line "go see what the"
+    cont "world has for"
+
+    para "you!"
+
+    para "Good luck!"
 	done
 
 _ClockTimeMayBeWrongText::

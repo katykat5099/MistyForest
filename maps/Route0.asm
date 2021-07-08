@@ -40,6 +40,7 @@ ScriptElderForget:
     applymovement PLAYER, PlayerLeave
     pause 5
     appear ROUTE0_ELDER
+    playsound SFX_EXIT_BUILDING
     showemote EMOTE_SHOCK, PLAYER, 20
     opentext
     writetext ElderForgetText1
@@ -53,6 +54,7 @@ ScriptElderForget:
     closetext
     applymovement ROUTE0_ELDER, ElderWalk2
     disappear ROUTE0_ELDER
+    playsound SFX_ENTER_DOOR
     setevent EVENT_ROUTE_0_DONE
     setscene SCENE_ROUTE_0_NOTHING
     end
@@ -87,23 +89,19 @@ ElderForgetText1:
 
 ElderForgetText2:
     text "To start your"
-    line "test, head back to"
-    cont "town and there is"
+    line "exam, head back to"
+    cont "town, there is a"
 
-    para "a small grown in"
-    line "trail that leads"
-    cont "to the area that"
+    para "trail that will"
+    line "take you where"
+    cont "you need to be."
 
-    para "the test will take"
-    line "place. It's on the"
-    cont "end of the trail."
+    para "You must find it"
+    line "yourself."
 
-    para "Make sure to read"
-    line "the signs to make"
-    cont "sure you know"
-
-    para "where you're"
-    line "going."
+    para "Read the signs"
+    line "so you don't get"
+    cont "lost."
 
     para "Enjoy!"
     done

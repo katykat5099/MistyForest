@@ -5680,18 +5680,14 @@ MoveInfoBox:
 	ld [wStringBuffer1], a
 	call .PrintPP
 
-	callfar UpdateMoveData
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	farcall GetMoveCategoryName
 	hlcoord 1, 9
+	ld de, .Type
 	call PlaceString
 
 	hlcoord 7, 11
-	ld h, b
-	ld l, c
 	ld [hl], "/"
 
+	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	hlcoord 2, 10
@@ -5702,6 +5698,8 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
+.Type:
+	db "TYPE/@"
 
 .PrintPP:
 	hlcoord 5, 11
@@ -7033,7 +7031,7 @@ GiveExperiencePoints:
 ; t = sat, f = sdf, 0 = unused bits
 	ld a, [wBaseHPAtkDefSpdEVs]
 	ld b, a
-	ld c, 6 ; six EVs
+	ld c, NUM_STATS ; six EVs
 .ev_loop
 	rlc b
 	rlc b
@@ -7044,20 +7042,18 @@ GiveExperiencePoints:
 	add a
 .no_pokerus_boost
 ; Make sure total EVs never surpass 510
-	push de
-	ld d, a
-	push af
 	push bc
 	push hl
+	ld d, a
 	ld a, c
-.find_correct_ev_add  ; if address of first ev is changed, find the correct ev address
-	cp 6
-	jr nc, .found_add
+.find_correct_ev_address  ; If address of first EV is changed, find the correct one.
+	cp NUM_STATS
+	jr z, .found_address
 	dec hl
 	inc a
-	jr .find_correct_ev_add
-.found_add
-	ld e, 6
+	jr .find_correct_ev_address
+.found_address
+	ld e, NUM_STATS
 	ld bc, 0
 .count_evs
 	ld a, [hli]
@@ -7077,17 +7073,14 @@ GiveExperiencePoints:
 	ld e, d
 .decrease_evs_gained
 	call IsEvsGreaterThan510
-	jr z, .check_ev_overflow
-	jr c, .check_ev_overflow
+	jr nc, .check_ev_overflow
 	dec e
 	dec bc
 	jr .decrease_evs_gained
 .check_ev_overflow
 	pop hl
 	pop bc
-	pop af
 	ld a, e
-	pop de
 	add [hl]
 	jr c, .ev_overflow
 	cp MAX_EV + 1
@@ -7106,7 +7099,18 @@ GiveExperiencePoints:
 	ld b, a
 	jr .ev_loop
 .evs_done
-
+	xor a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
+	ld a, [wEnemyMonBaseExp]
+	ldh [hMultiplicand + 2], a
+	ld a, [wEnemyMonLevel]
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 7
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_ID
@@ -7403,9 +7407,7 @@ GiveExperiencePoints:
 	ret c
 
 	ld [wTempByteValue], a
-	ld hl, wEnemyMonBaseStats
-	ld c, wEnemyMonEnd - wEnemyMonBaseStats
-.base_stat_division_loop
+	ld hl, wEnemyMonBaseExp
 	xor a
 	ldh [hDividend + 0], a
 	ld a, [hl]
@@ -7415,20 +7417,17 @@ GiveExperiencePoints:
 	ld b, 2
 	call Divide
 	ldh a, [hQuotient + 3]
-	ld [hli], a
-	dec c
-	jr nz, .base_stat_division_loop
+	ld [hl], a
 	ret
 
 IsEvsGreaterThan510:
-      ; EV total in bc
-      ; Returns c if lower
-      ld a, b
-      cp HIGH(MAX_TOTAL_EV)
-      ret nz
-      ld a, c
-      cp LOW(MAX_TOTAL_EV)
-      ret
+; Total EVs in bc. Set Carry flag if bc > 510.
+   ld a, HIGH(MAX_TOTAL_EV)
+	cp b
+	ret nz
+	ld a, LOW(MAX_TOTAL_EV)
+	cp c
+	ret
 
 BoostExp:
 ; Multiply experience by 1.5x

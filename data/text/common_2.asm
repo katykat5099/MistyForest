@@ -1524,24 +1524,23 @@ _MayRegisterItemText::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
-
-	para "Welcome to the"
-	line "world of #MON!"
+	text "Thank you for"
+	line "helping me out"
+    cont "with the time."
 
 	para "My name is OAK."
 
-	para "People call me the"
-	line "#MON PROF."
+	para "Let's begin"
+	line "right away."
+
+	para "To start off…"
 	prompt
 
 _OakText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#MON.@"
-	text_end
+    text "This is going to"
+    line "be your partner"
+    cont "in this world."
+    text_end
 
 _OakText3::
 	text_promptbutton
@@ -1550,26 +1549,40 @@ _OakText3::
 	text_end ; unreferenced
 
 _OakText4::
-	text "People and #MON"
-	line "live together by"
+    text "I hope you will"
+	line "become great"
+	cont "friends!"
 
-	para "supporting each"
-	line "other."
+	para "It's important"
+	line "to train it"
+	cont "to it's full"
 
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "potential in"
+	line "order to be"
+	cont "successful."
 	prompt
 
 _OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
+    text "This world is"
+    line "full of many"
+    cont "mysteries,"
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
+    para "and lots of"
+    line "different"
+    cont "personalities."
 
-	para "That's why I study"
-	line "#MON every day."
+    para "There are many"
+    line "curiosities,"
+    cont "and that is"
+
+    para "why you're"
+    line "here."
+
+    para "You will soon"
+    line "discover what"
+    cont "those are,"
+
+    para "and why they"
+    line "are important"
+    cont "to you now!"
 	prompt

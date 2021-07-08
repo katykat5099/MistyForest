@@ -194,7 +194,6 @@ DayOfWeekSiblingsHouse_Blocks:
 Route27SandstormHouse_Blocks:
 MrPsychicsHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
-GuideGentsHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
@@ -1054,3 +1053,6 @@ CherrygroveGymSpeechHouse_Blocks:
 
 CherrygroveEvolutionSpeechHouse_Blocks:
     INCBIN "maps/CherrygroveEvolutionSpeechHouse.blk"
+
+GuideGentsHouse_Blocks:
+    INCBIN "maps/GuideGentsHouse.blk"

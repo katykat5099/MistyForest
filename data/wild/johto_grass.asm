@@ -1713,28 +1713,28 @@ JohtoGrassWildMons:
     def_grass_wildmons CHERRYGROVE_GYM_SPEECH_HOUSE
 	db 6 percent, 5 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, AERODACTYL
-	db 5, AERODACTYL
-	db 5, AIPOM
-	db 5, AIPOM
-	db 5, ALAKAZAM
-	db 5, ALAKAZAM
-	db 5, AMPHAROS
+	db 6, AERODACTYL
+	db 6, AIPOM
+	db 6, ALAKAZAM
+	db 7, AERODACTYL
+	db 7, AIPOM
+	db 7, ALAKAZAM
+	db 7, AMPHAROS
 	; day
-	db 5, AERODACTYL
-	db 5, AERODACTYL
-	db 5, AIPOM
-	db 5, AIPOM
-	db 5, ALAKAZAM
-	db 5, ALAKAZAM
-	db 5, AMPHAROS
+	db 6, AIPOM
+    db 6, ALAKAZAM
+    db 6, AERODACTYL
+    db 7, AIPOM
+    db 7, ALAKAZAM
+    db 7, AERODACTYL
+    db 7, AMPHAROS
 	; nite
-	db 5, AERODACTYL
-	db 5, AERODACTYL
-	db 5, AIPOM
-	db 5, AIPOM
-	db 5, ALAKAZAM
-	db 5, ALAKAZAM
-	db 5, AMPHAROS
+	db 6, ALAKAZAM
+    db 6, AERODACTYL
+    db 6, AIPOM
+    db 7, ALAKAZAM
+    db 7, AERODACTYL
+    db 7, AIPOM
+    db 7, AMPHAROS
 	end_grass_wildmons
 	db -1 ; end

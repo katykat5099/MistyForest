@@ -20,6 +20,7 @@ ElmsHouse_MapScripts:
     applymovement PLAYER, SpeakToElder
     opentext
     writetext PokemonGetStep1
+    promptbutton
     closetext
     pause 10
     opentext
@@ -65,6 +66,7 @@ GeckooGetScript:
     turnobject ELMSHOUSE_ELDER, RIGHT
     opentext
     writetext ElderFinalWords
+    promptbutton
     closetext
     setevent EVENT_GECKOOGET
     setevent EVENT_RIVAL_NEW_BARK_TOWN
@@ -91,113 +93,83 @@ HowAreYou:
     done
 
 PokemonGetStep1:
-    text "Alright, so"
-    line "just a few days"
+    text "Welcome!"
+    line "The reason I"
+    cont "called you here"
 
-    para "ago was your"
-    line "18th birthday."
+    para "today is because"
+    line "you passed your"
+    cont "written exam!"
 
-    para "As you may know,"
-    line "as tradition in"
+    para "You showed me"
+    line "that you are"
+    cont "more than ready"
 
-    para "this village,"
-    line "you are now an"
+    para "to move on to"
+    line "the field exam."
 
-    para "adult and you"
-    line "must contribute"
+    para "You have an"
+    line "excellent under-"
+    cont "standing of how"
 
-    para "to the village"
-    line "with your new"
+    para "battles work!"
 
-    para "responsibilities."
+    para "Now you must"
+    line "prove to me in"
+    cont "the field exam"
 
-    para "I know, I know.."
-    line "You're nervous,"
+    para "that you have"
+    line "what it takes"
+    cont "to become an"
 
-    para "you're excited,"
-    line "you've been up"
+    para "apprentice in"
+    line "this research"
+    cont "tower."
 
-    para "studying really"
-    line "hard for this day."
-
-    para "But, you will now"
-    line "be tested to see"
-
-    para "if you are"
-    line "capable of the"
-
-    para "task of becoming"
-    line "a researcher here"
-
-    para "in this village,"
-    line "or if you will be"
-
-    para "spending the wrest"
-    line "of your days being"
-
-    para "a farmer for the"
-    line "village! Haha!"
-
-    para "I know how badly"
-    line "you want to become"
-
-    para "a researcher.. So"
-    line "I wish you all of"
-
-    para "the luck on your"
-    line "test!"
+    para "Are you ready?"
     done
 
 PokemonGetStep2:
-    text "So, let's begin."
-    line "As you can see,"
+    text "As you can see,"
+    line "there's a ball"
+    cont "on the table."
 
-    para "There's a ball"
-    line "on the table over"
+    para "The monster"
+    line "contained in"
+    cont "that ball was"
 
-    para "there. That was"
-    line "bred for you last"
+    para "recently bred"
+    line "and I am"
+    cont "allowing you"
 
-    para "week! Every adult"
-    line "here gets one"
+    para "to train this"
+    line "monster."
 
-    para "once they become"
-    line "an adult because"
+    para "You must not"
+    line "make a mistake"
+    cont "though. This"
 
-    para "that's when we all"
-    line "agreed that a"
+    para "monster is a"
+    line "rare DRAGON"
+    cont "type monster,"
 
-    para "person has learnt"
-    line "enough to defend"
+    para "training it"
+    line "incorrectly can"
+    cont "result in it"
 
-    para "themselves from"
-    line "the creatures in"
+    para "becoming weak"
+    line "and it may not"
+    cont "be able to grow"
 
-    para "the wild."
+    para "to its natural"
+    line "potential."
 
-    para "It's a DRAGON type"
-    line "monster that has"
+    para "Anyways, shall"
+    line "we begin now?"
 
-    para "been bred for"
-    line "generations!"
-
-    para "But that does not"
-    line "take away the fact"
-
-    para "that DRAGON type"
-    line "monsters are hard"
-
-    para "to train! That is"
-    line "why you had to"
-
-    para "Spend so many"
-    line "years learning"
-
-    para "the basics about"
-    line "training."
-
-    para "Alright, go on"
-    line "now! Say hello!"
+    para "Go say hi to"
+    line "your new"
+    cont "friend!"
     done
 
 GeckooCautious:
@@ -206,18 +178,24 @@ GeckooCautious:
     done
 
 RecievedGeckoo:
-    text "Got GECKOO!"
+    text "Got GEKKOU!"
     done
 
 ElderFinalWords:
-    text "Lastly, I would"
-    line "highly recommend"
+    text "Lastly, I highly"
+    line "recommend that"
+    cont "you take a look"
 
-    para "you take a look"
-    line "at some books"
+    para "at some books"
+    line "down stairs."
 
-    para "down stairs. they"
-    line "may come in handy!"
+    para "They could be"
+    line "very handy!"
+    cont "Haha!"
+
+    para "But don't tell"
+    line "anyone I told"
+    cont "you that."
     done
 
 ElmsHouse_MapEvents:

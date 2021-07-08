@@ -70,7 +70,7 @@ PokemonCries::
 	mon_cry CRY_PIDGEY,        0,  383 ; POLIWRATH
 	mon_cry CRY_CHIKORITA,   -10,  100 ; ABRA
 	mon_cry CRY_METAPOD,     168,  320 ; KADABRA
-	mon_cry CRY_METAPOD,     152,  383 ; ALAKAZAM
+	mon_cry CRY_CHIKORITA,  -100,  500 ; ALAKAZAM
 	mon_cry CRY_GROWLITHE,   238,  129 ; MACHOP
 	mon_cry CRY_GROWLITHE,    72,  224 ; MACHOKE
 	mon_cry CRY_GROWLITHE,     8,  320 ; MACHAMP
@@ -147,7 +147,7 @@ PokemonCries::
 	mon_cry CRY_GROWLITHE,   255,  192 ; OMASTAR
 	mon_cry CRY_CATERPIE,    187,  192 ; KABUTO
 	mon_cry CRY_FEAROW,      238,  129 ; KABUTOPS
-	mon_cry CRY_VILEPLUME,    32,  368 ; AERODACTYL
+	mon_cry CRY_TEDDIURSA,  1500,  150 ; AERODACTYL
 	mon_cry CRY_GRIMER,       85,  129 ; SNORLAX
 	mon_cry CRY_RAICHU,      128,  192 ; ARTICUNO
 	mon_cry CRY_FEAROW,      255,  256 ; ZAPDOS
@@ -195,7 +195,7 @@ PokemonCries::
 	mon_cry CRY_CLEFFA,       59,  200 ; HOPPIP
 	mon_cry CRY_CLEFFA,       39,  312 ; SKIPLOOM
 	mon_cry CRY_CLEFFA,        0,  384 ; JUMPLUFF
-	mon_cry CRY_AIPOM,       -81,  232 ; AIPOM
+	mon_cry CRY_AIPOM,      -200,   50 ; AIPOM
 	mon_cry CRY_MARILL,      299,  184 ; SUNKERN
 	mon_cry CRY_SUNFLORA,    -32,  384 ; SUNFLORA
 	mon_cry CRY_TOTODILE,     49,  200 ; YANMA

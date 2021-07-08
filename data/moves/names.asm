@@ -27,7 +27,7 @@ MoveNames::
 	li "MEGA KICK"
 	li "JUMP KICK"
 	li "ROLLING KICK"
-	li "SAND-ATTACK"
+	li "DRGN SCRATCH"
 	li "HEADBUTT"
 	li "HORN ATTACK"
 	li "FURY ATTACK"

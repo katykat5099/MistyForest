@@ -4,9 +4,9 @@
 	evs  0,   0,   0,   0,   1,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
-	db 45 ; catch rate
-	db 94 ; base exp
+	db GHOST, FLYING ; type
+	db 1 ; catch rate
+	db 84 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
