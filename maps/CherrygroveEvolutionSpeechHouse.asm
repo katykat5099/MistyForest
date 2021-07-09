@@ -12,8 +12,8 @@ CherrygroveEvolutionSpeechHouse_MapEvents:
 	warp_event  2,  7, CHERRYGROVE_CITY, 1
 	warp_event  3,  7, CHERRYGROVE_CITY, 1
 	warp_event  3,  2, CHERRYGROVE_GYM_SPEECH_HOUSE, 1
-	warp_event 13, 14, CHERRYGROVE_GYM_SPEECH_HOUSE, 2
-	warp_event 13, 11, GUIDE_GENTS_HOUSE, 1
+	warp_event 15, 14, CHERRYGROVE_GYM_SPEECH_HOUSE, 2
+	warp_event 15, 11, GUIDE_GENTS_HOUSE, 1
 
 	def_coord_events
 

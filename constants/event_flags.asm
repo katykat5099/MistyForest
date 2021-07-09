@@ -1459,6 +1459,7 @@
 	const EVENT_GECKOOGET
 	const EVENT_ROUTE_0_DONE
 	const EVENT_ELDERAPPEAR
+	const EVENT_FIRST_TOWER_BOSS
 ; Unused: next 48 events
 
 	const_next 2048
