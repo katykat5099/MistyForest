@@ -1178,61 +1178,34 @@ JohtoGrassWildMons:
 	db 52, PARASECT
 	end_grass_wildmons
 
-	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	db 3, GEODUDE
-	db 2, ZUBAT
-	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, TEDDIURSA
-	db 4, ZUBAT
-	db 4, DUNSPARCE
-	; day
-	db 3, GEODUDE
-	db 2, ZUBAT
-	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
-	db 4, ZUBAT
-	db 4, DUNSPARCE
-	; nite
-	db 3, GEODUDE
-	db 2, ZUBAT
-	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
-	db 4, ZUBAT
-	db 4, DUNSPARCE
-	end_grass_wildmons
-
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	db 23, GEODUDE
-	db 23, ZUBAT
-	db 25, GRAVELER
-	db 25, URSARING
-	db 20, TEDDIURSA
-	db 23, GOLBAT
-	db 23, GOLBAT
+    ; morn
+	db 9, AERODACTYL
+	db 9, AIPOM
+	db 9, ALAKAZAM
+	db 10, AERODACTYL
+	db 10, AIPOM
+	db 10, ALAKAZAM
+	db 10, AMPHAROS
 	; day
-	db 23, GEODUDE
-	db 23, ZUBAT
-	db 25, GRAVELER
-	db 25, URSARING
-	db 30, URSARING
-	db 23, GOLBAT
-	db 23, GOLBAT
+	db 9, AIPOM
+    db 9, ALAKAZAM
+    db 9, AERODACTYL
+    db 10, AIPOM
+    db 10, ALAKAZAM
+    db 10, AERODACTYL
+    db 10, AMPHAROS
 	; nite
-	db 23, GEODUDE
-	db 23, ZUBAT
-	db 25, GRAVELER
-	db 20, WOBBUFFET
-	db 25, WOBBUFFET
-	db 23, GOLBAT
-	db 23, GOLBAT
+	db 9, ALAKAZAM
+    db 9, AERODACTYL
+    db 9, AIPOM
+    db 10, ALAKAZAM
+    db 10, AERODACTYL
+    db 10, AIPOM
+    db 10, AMPHAROS
 	end_grass_wildmons
+	db -1 ; end
 
 	def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1711,30 +1684,30 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
     def_grass_wildmons CHERRYGROVE_GYM_SPEECH_HOUSE
-	db 6 percent, 5 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 5 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
+	db 5, AERODACTYL
+	db 5, AIPOM
+	db 5, ALAKAZAM
 	db 6, AERODACTYL
 	db 6, AIPOM
 	db 6, ALAKAZAM
-	db 7, AERODACTYL
-	db 7, AIPOM
-	db 7, ALAKAZAM
-	db 7, AMPHAROS
+	db 6, AMPHAROS
 	; day
-	db 6, AIPOM
+	db 5, AIPOM
+    db 5, ALAKAZAM
+    db 5, AERODACTYL
+    db 6, AIPOM
     db 6, ALAKAZAM
     db 6, AERODACTYL
-    db 7, AIPOM
-    db 7, ALAKAZAM
-    db 7, AERODACTYL
-    db 7, AMPHAROS
+    db 6, AMPHAROS
 	; nite
-	db 6, ALAKAZAM
+	db 5, ALAKAZAM
+    db 5, AERODACTYL
+    db 5, AIPOM
+    db 6, ALAKAZAM
     db 6, AERODACTYL
     db 6, AIPOM
-    db 7, ALAKAZAM
-    db 7, AERODACTYL
-    db 7, AIPOM
-    db 7, AMPHAROS
+    db 6, AMPHAROS
 	end_grass_wildmons
 	db -1 ; end

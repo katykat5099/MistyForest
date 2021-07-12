@@ -20,9 +20,11 @@ FirstTowerBoss:
     writetext CompletedBattle
     promptbutton
     pause 3
-    verbosegiveitem HM_CUT
+    writetext ItemAppears
+    verbosegiveitem KNIFE
     closetext
     setevent EVENT_FIRST_TOWER_BOSS
+    end
 
 RanAwayProbably:
     reloadmapafterbattle
@@ -42,6 +44,12 @@ CompletedBattle:
 
     para "Move on to the"
     line "next, successor."
+    done
+
+ItemAppears:
+    text "You see a item"
+    line "shape into reality"
+    cont "in front of you."
     done
 
 GuideGentsHouse_MapEvents:

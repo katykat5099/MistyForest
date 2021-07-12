@@ -1,13 +1,21 @@
 	object_const_def
 	const PLAYERSHOUSE1F_MOM1
 	const PLAYERSHOUSE1F_MOM2
+	const PLAYERSHOUSE1F_MOM3
 
 PlayersHouse1F_MapScripts:
 	def_scene_scripts
+	scene_script .SetUp ; Set up room
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
 	def_callbacks
+
+.SetUp:
+    checkevent EVENT_GECKOOGET
+    disappear PLAYERSHOUSE1F_MOM3
+    setevent EVENT_PLAYERS_HOUSE_MOM_3
+    end
 
 .DummyScene0:
 	end
@@ -98,7 +106,27 @@ MeetMomScript:
 	end
 
 MomScript:
+    faceplayer
+    opentext
+    writetext GetGoingNow
+    closetext
 	end
+
+MomScript2:
+    faceplayer
+    opentext
+    writetext MomHealMonsters
+    promptbutton
+    closetext
+    special FadeBlackQuickly
+    special ReloadSpritesNoPalettes
+    playmusic MUSIC_HEAL
+    special HealParty
+    pause 60
+    special FadeInQuickly
+    special RestartMapMusic
+    closetext
+    end
 
 PlayersHouse1FTVScript:
 	jumptext PlayersHouse1FTVText
@@ -193,6 +221,18 @@ ComeHomeForDSTText:
 	line "Saving Time."
 	done
 
+MomHealMonsters:
+    text "Do your monsters"
+    line "need to be"
+    cont "healed? Sure!"
+    done
+
+GetGoingNow:
+    text "The Elder's"
+    line "waiting, get"
+    cont "going!"
+    done
+
 PlayersHouse1FStoveText:
 	text "Mom's specialty!"
 
@@ -248,4 +288,5 @@ PlayersHouse1F_MapEvents:
 
 	def_object_events
 	object_event 10, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  2, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  2, 11, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript2, EVENT_PLAYERS_HOUSE_MOM_3

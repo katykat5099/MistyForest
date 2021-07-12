@@ -37,7 +37,6 @@ EventDone:
     end
 
 ScriptElderForget:
-    applymovement PLAYER, PlayerLeave
     pause 5
     appear ROUTE0_ELDER
     playsound SFX_EXIT_BUILDING
@@ -46,40 +45,25 @@ ScriptElderForget:
     writetext ElderForgetText1
     promptbutton
     closetext
-    applymovement ROUTE0_ELDER, ElderWalk
     turnobject PLAYER, UP
     opentext
     writetext ElderForgetText2
     promptbutton
     closetext
-    applymovement ROUTE0_ELDER, ElderWalk2
+    turnobject ROUTE0_ELDER, UP
+    pause 5
     disappear ROUTE0_ELDER
     playsound SFX_ENTER_DOOR
     setevent EVENT_ROUTE_0_DONE
     setscene SCENE_ROUTE_0_NOTHING
+    clearevent EVENT_PLAYERS_HOUSE_MOM_3
+    setevent EVENT_PLAYERS_HOUSE_MOM_2
     end
 
 ResearchTowerAheadScript:
     jumptext ResearchTowerAheadText
 
 ;Movement Past Here
-PlayerLeave:
-    step DOWN
-    step DOWN
-    step DOWN
-    step_end
-
-ElderWalk:
-    step DOWN
-    step DOWN
-    step DOWN
-    step_end
-
-ElderWalk2:
-    step UP
-    step UP
-    step UP
-    step_end
 
 ;Text Past Here
 ElderForgetText1:

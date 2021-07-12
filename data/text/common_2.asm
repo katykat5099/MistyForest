@@ -301,9 +301,7 @@ _CantUseItemText::
 	prompt
 
 _UseCutText::
-	text_ram wStringBuffer2
-	text " used"
-	line "CUT!"
+	text "Used the KNIFE"
 	prompt
 
 _CutNothingText::
