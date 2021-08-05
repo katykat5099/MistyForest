@@ -821,7 +821,7 @@ PoliwrathEvosAttacks:
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
-	db EVOLVE_LEVEL, 16, KADABRA
+	db EVOLVE_LEVEL, 25, ARCANINE
 	db 0 ; no more evolutions
 	db 1, TWISTER
 	db 1, DSCRATCH

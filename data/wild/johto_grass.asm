@@ -1179,7 +1179,7 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 6 percent, 5 percent, 8 percent ; encounter rates: morn/day/nite
     ; morn
 	db 9, AERODACTYL
 	db 9, AIPOM
@@ -1205,7 +1205,6 @@ JohtoGrassWildMons:
     db 10, AIPOM
     db 10, AMPHAROS
 	end_grass_wildmons
-	db -1 ; end
 
 	def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
