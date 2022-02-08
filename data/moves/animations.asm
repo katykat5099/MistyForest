@@ -29,7 +29,7 @@ BattleAnimations::
 	dw BattleAnim_MegaKick
 	dw BattleAnim_JumpKick
 	dw BattleAnim_RollingKick
-	dw BattleAnim_SandAttack
+	dw BattleAnim_DScratch
 	dw BattleAnim_Headbutt
 	dw BattleAnim_HornAttack
 	dw BattleAnim_FuryAttack
@@ -2042,9 +2042,21 @@ BattleAnim_Dig:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_SandAttack:
-	anim_1gfx ANIM_GFX_SAND
-	anim_call BattleAnimSub_SandOrMud
+BattleAnim_DScratch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING, $0, BG_EFFECT_USER, $20
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_wait 72
+	anim_incbgeffect ANIM_BG_CYCLE_MON_LIGHT_DARK_REPEATING
+	anim_call BattleAnim_ShowMon_0
+	anim_1gfx ANIM_GFX_CUT
+	anim_resetobp0
+	anim_sound 0, 1, SFX_SCRATCH
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 144, 48, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 140, 44, $0
+	anim_obj ANIM_OBJ_CUT_DOWN_LEFT, 136, 40, $0
+	anim_wait 32
 	anim_ret
 
 BattleAnim_StringShot:
